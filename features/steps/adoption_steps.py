@@ -3,7 +3,7 @@ from features import environment
 
 @given(u'I am on the home page')
 def step_impl(context):
-    context.page.goto("http://localhost:5073")
+    context.page.goto("http://localhost:5063")
 
 @when(u'I click on the puppy "Brook"')
 def step_impl(context):
