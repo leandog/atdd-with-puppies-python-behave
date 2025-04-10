@@ -9,9 +9,11 @@ def step_impl(context):
 def step_impl(context):
     context.page.get_by_role("link", name="Brook").click()
 
-@then(u'I see "Adopt Me!"')
+@then(u'I am on the profile page')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then I see "Adopt Me!"')
+    raise NotImplementedError(u'STEP: I am on the profile page')
+
+# expect(context.page.get_by_role("heading", name="Sign up")).to_be_visible()
 
 
 # @when(u'I click on "Return to List"')

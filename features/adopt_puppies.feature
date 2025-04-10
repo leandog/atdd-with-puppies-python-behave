@@ -5,7 +5,7 @@ Feature: As a dog lover
   Scenario: Be able to view the details of a puppy
     Given I am on the home page
     When I click on the puppy "Brook"
-    Then I see "Adopt Me!"
+    Then I am on the profile page
 
 #  Scenario: #2 Be able to return to the view of all available puppies
 #    Given I am on the home page
