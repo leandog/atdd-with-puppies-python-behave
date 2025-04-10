@@ -7,6 +7,8 @@ Feature: As a dog lover
     When I click on the puppy "Brook"
     Then I am on the profile page
 
+#  Scenario:  BOB Team Scenario
+
 #  Scenario: #2 Be able to return to the view of all available puppies
 #    Given I am on the home page
 #    When I click on the puppy "Brook"

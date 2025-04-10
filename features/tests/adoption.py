@@ -1,6 +1,7 @@
 import re
 from playwright.sync_api import Page, expect
 
+# Pytest can test utility code
 def test_has_title(page: Page):
     page.goto("http://localhost:5063/")
 
