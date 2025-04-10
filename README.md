@@ -24,7 +24,7 @@ Run unit tests on change
 ptw
 ```
 
-Run the entire functional test suite:
+## Run Functional Tests
 
 ```shell
 behave
