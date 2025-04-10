@@ -7,7 +7,7 @@ def step_impl(context):
 
 @when(u'I click on the puppy "Brook"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When I click on the puppy "Brook"')
+    context.page.get_by_role("link", name="Brook").click()
 
 @then(u'I see "Adopt Me!"')
 def step_impl(context):
