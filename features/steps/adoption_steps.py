@@ -1,5 +1,9 @@
+import re
+
 from behave import given, when, then
 from features import environment
+from playwright.sync_api import expect
+
 
 @given(u'I am on the home page')
 def step_impl(context):
@@ -11,8 +15,7 @@ def step_impl(context):
 
 @then(u'I am on the profile page')
 def step_impl(context):
-    # raise NotImplementedError(u'STEP: I am on the profile page')
-    assert (context.page.get_by_role("heading", name="Sign up")).to_be_visible()
+    expect(context.page).to_have_title(re.compile("Profile"))
 
 
 # @when(u'I click on "Return to List"')
