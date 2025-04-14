@@ -46,3 +46,15 @@ This is used to point at the site on different environments such as development,
 BASE_URL="http://example.org:1234" behave
 ```
 
+## Formatting
+
+To format all files:
+```shell
+ruff format
+```
+
+To check if all files are properly formatted and return a non-zero exit code if they are not:
+
+```shell
+ruff format --check
+```
