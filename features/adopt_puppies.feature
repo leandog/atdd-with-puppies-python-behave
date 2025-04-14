@@ -5,16 +5,17 @@ Feature: As a dog lover
   Scenario: Be able to view the details of a puppy
     Given I am on the home page
     When I click on the puppy "Brook"
-    Then I am on the profile page
+    Then I see the profile page
 
 #  Scenario:  BOB Team Scenario
 
-#  Scenario: #2 Be able to return to the view of all available puppies
-#    Given I am on the home page
-#    When I click on the puppy "Brook"
-#    And I click on "Return to List"
-#    Then I see the home page
-#
+  Scenario: Be able to return to the view of all available puppies
+    Given I am on the home page
+    When I click on the puppy "Brook"
+    And I see the profile page
+    And I click on "Home"
+    Then I see the home page
+
 #  Scenario: #3 Be able to add the puppy to adopt later
 #    Given I am on the home page
 #    When I click on the puppy "Brook"

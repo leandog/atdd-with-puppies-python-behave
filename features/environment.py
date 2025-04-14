@@ -5,6 +5,7 @@ from datetime import datetime
 from playwright.sync_api import sync_playwright
 
 
+# behave hook functions
 def before_all(context):
     p = sync_playwright().start()
 
