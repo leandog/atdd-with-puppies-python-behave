@@ -26,6 +26,14 @@ ptw
 
 ## Run Functional Tests
 
+By default the functional tests run in headless mode:
+
 ```shell
 behave
+```
+
+To show the browser while running and slow it down by 1,000 ms per call so a human can see what is happening: 
+
+```shell
+HEADLESS=false SLOW_BY=1000 behave
 ```
