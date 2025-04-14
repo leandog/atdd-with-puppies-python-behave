@@ -1,7 +1,6 @@
 import re
 
 from behave import given, when, then
-from features import environment
 from playwright.sync_api import expect
 
 
