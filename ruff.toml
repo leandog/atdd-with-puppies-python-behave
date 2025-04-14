@@ -1,0 +1,10 @@
+line-length = 79
+output-format = "github"
+show-fixes = true
+
+[format]
+quote-style = "single"
+
+[lint]
+# NOTE: Rule F811 is disabled because it doesn't like the way behave uses multiple step_impl functions
+ignore = ["F811"]

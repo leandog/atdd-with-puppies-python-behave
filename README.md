@@ -58,3 +58,17 @@ To check if all files are properly formatted and return a non-zero exit code if 
 ```shell
 ruff format --check
 ```
+
+## Linting
+
+To lint the application's code:
+
+```shell
+ruff check
+```
+
+To lint and automatically fix any errors it can safely:
+
+```shell
+ruff check --fix
+```
