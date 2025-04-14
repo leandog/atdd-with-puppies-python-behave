@@ -7,7 +7,7 @@ from playwright.sync_api import expect
 
 @given(u'I am on the home page')
 def step_impl(context):
-    context.page.goto("http://localhost:5063")
+    context.page.goto(context.base_url)
 
 @when(u'I click on the puppy "Brook"')
 def step_impl(context):

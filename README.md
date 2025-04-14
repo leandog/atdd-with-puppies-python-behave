@@ -37,3 +37,12 @@ To show the browser while running and slow it down by 1,000 ms per call so a hum
 ```shell
 HEADLESS=false SLOW_BY=1000 behave
 ```
+
+You can also change the location of the application you are testing using the BASE_URL environment variable. 
+
+This is used to point at the site on different environments such as development, test, production, etc. By default this is set to http://localhost:5063/
+
+```shell
+BASE_URL="http://example.org:1234" behave
+```
+
