@@ -1,9 +1,13 @@
 ## Setup
 
-If you don't yet have a .venv directory (which will be the case on first checkout)
+If you don't yet have a .venv directory (which will typically be the case on first checkout)
+
 ```shell
 python3 -m venv .venv
 ```
+
+
+Setup your virtual environment and install dependencies:
 
 ```shell
 source .venv/bin/activate
@@ -18,7 +22,8 @@ Run the entire unit test suite:
 ```shell
 pytest
 ```
-Run unit tests on change
+
+Run unit tests every time a file changes:
 
 ```shell
 ptw
@@ -26,7 +31,7 @@ ptw
 
 ## Run Functional Tests
 
-By default the functional tests run in headless mode:
+By default, the functional tests run in headless mode:
 
 ```shell
 behave
@@ -40,7 +45,7 @@ HEADLESS=false SLOW_BY=1000 behave
 
 You can also change the location of the application you are testing using the BASE_URL environment variable. 
 
-This is used to point at the site on different environments such as development, test, production, etc. By default this is set to http://localhost:5063/
+This is used to point at the site on different environments such as development, test, production, etc. By default, this is set to http://localhost:5063/
 
 ```shell
 BASE_URL="http://example.org:1234" behave
@@ -48,12 +53,13 @@ BASE_URL="http://example.org:1234" behave
 
 ## Formatting
 
-To format all files:
+Format all files:
+
 ```shell
 ruff format
 ```
 
-To check if all files are properly formatted and return a non-zero exit code if they are not:
+Check if all files are properly formatted and return a non-zero exit code if they are not:
 
 ```shell
 ruff format --check
@@ -61,13 +67,13 @@ ruff format --check
 
 ## Linting
 
-To lint the application's code:
+Lint the application's code:
 
 ```shell
 ruff check
 ```
 
-To lint and automatically fix any errors it can safely:
+Lint and automatically fix any errors it can safely:
 
 ```shell
 ruff check --fix
