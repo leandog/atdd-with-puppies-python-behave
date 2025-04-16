@@ -2,10 +2,14 @@ Feature: As a dog lover
   I want to adopt a puppy
   So that I have a loyal companion
 
-  Scenario: Be able to view the details of a puppy
+  Scenario Outline: Be able to view the details of a puppy
     Given I am on the home page
-    When I click on the puppy "Brook"
+    When I click on the puppy "<puppy_name>"
     Then I see the profile page
+
+    Examples:
+    | puppy_name |
+    | Brook |
 
 #  Scenario:  BOB Team Scenario
 

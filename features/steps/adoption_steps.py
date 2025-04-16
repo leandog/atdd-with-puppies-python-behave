@@ -9,9 +9,9 @@ def step_impl(context):
     context.page.goto(context.base_url)
 
 
-@step('I click on the puppy "Brook"')
-def step_impl(context):
-    context.page.get_by_role('link', name='Brook').click()
+@step('I click on the puppy "{puppy_name}"')
+def step_impl(context, puppy_name):
+    context.page.get_by_role('link', name=puppy_name).click()
 
 
 @step('I click on "Home"')
