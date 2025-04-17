@@ -15,7 +15,7 @@ Feature: As a dog lover
 
   Scenario: Be able to return to the view of all available puppies
     Given I am on the home page
-    When I click on the puppy "Fred"
+    When I click on the puppy "Brook"
     And I see the profile page
     And I click on "Home"
     Then I see the home page
