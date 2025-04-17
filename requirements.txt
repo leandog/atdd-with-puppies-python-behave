@@ -1,5 +1,4 @@
 behave==1.2.6
-behave-html-pretty-formatter==1.12.7
 playwright==1.51.0
 pytest-playwright==0.7.0
 pytest-watch==4.2.0
