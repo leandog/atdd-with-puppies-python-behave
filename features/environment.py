@@ -1,8 +1,10 @@
 import logging
 import os
-
 from datetime import datetime
+
 from playwright.sync_api import sync_playwright
+
+from features.pages.home_page import HomePage
 
 
 # behave hook functions
@@ -17,7 +19,7 @@ def before_all(context):
             headless=False, slow_mo=slow_mo_delay, channel='chrome'
         )
 
-    context.page = browser.new_page()
+    context.browser = browser
 
     context.base_url = _environment_variable_as_str(
         'BASE_URL', 'http://localhost:5063'
@@ -26,17 +28,19 @@ def before_all(context):
     context.logger.setLevel(logging.DEBUG)
 
 
+def before_scenario(context, scenario):
+    context.home_page = HomePage(context.browser)
+
+
 def after_scenario(context, scenario):
-    if scenario.status == 'failed':
+    if scenario.status == 'failed' and context.last_page:
         timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
         screenshot_path = (
             f'failure_screenshots/{scenario.name}_{timestamp}.png'
         )
-        context.page.screenshot(path=screenshot_path)
+        context.last_page.screenshot(path=screenshot_path)
 
-
-def after_all(context):
-    context.page.close()
+    context.home_page.cleanup()
 
 
 # Private helper functions
