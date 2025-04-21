@@ -51,6 +51,14 @@ This is used to point at the site on different environments such as development,
 BASE_URL="http://example.org:1234" behave
 ```
 
+Sometimes it is useful to show stdout (the otuput from print statements) when running the functional tests. 
+
+To do that pass the --no-capture flag as shown below:
+
+```shell
+behave --no-capture
+```
+
 ## Formatting
 
 Format all files:
