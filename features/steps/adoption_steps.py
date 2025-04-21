@@ -40,20 +40,18 @@ def step_impl(context):
 
 @step('I fill the form in with the following values')
 def step_impl(context):
-    print(context)
     for row in context.table:
-        print(row)
-    time.sleep(2)
-    raise NotImplementedError(
-        'STEP: Given I fill the form in with the following values'
-    )
+        context.last_page.get_by_label(row['label']).fill(row['value'])
 
 
-@step('I click on "Place Order"')
-def step_impl(context):
-    raise NotImplementedError('STEP: Given I click on "Place Order"')
+@step('I click on "{button_label}"')
+def step_impl(context, button_label):
+    context.last_page.get_by_text(button_label).click()
 
 
 @step('I see the following form values')
 def step_impl(context):
-    raise NotImplementedError('STEP: Then I see the following form values')
+    for row in context.table:
+        expect(context.last_page.get_by_label(row['label'])).to_have_value(
+            row['expected_value']
+        )

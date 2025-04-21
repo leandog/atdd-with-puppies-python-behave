@@ -22,3 +22,6 @@ class BasePage:
         self.page.get_by_role('link', name='Home').click()
 
         return self.page
+
+    def locate_by_label(self, label):
+        self.page.get_by_label(label)

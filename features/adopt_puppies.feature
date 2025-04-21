@@ -53,7 +53,22 @@ Feature: As a dog lover
 #    When I add a Collar & Leash to my order
 #    And I add a Chew Toy to my order
 #    Then I see "$63.93"
-#
+
+  Scenario: TEMP #8 Complete an adoption
+    Given I am on the adoption page
+    And I fill the form in with the following values:
+      | label     | value           |
+      | Name:     | Joe Sixpack     |
+      | Address:  | 123 Main St.    |
+      | Email:    | joe@sixpack.com |
+    And I click on "Place Order"
+    Then I see the following form values:
+      | label     | expected_value  |
+      | Name:     | Joe Sixpack     |
+      | Address:  | 123 Main St.    |
+      | Email:    | joe@sixpack.com |
+
+
 #  Scenario: #8 Complete an adoption
 #    Given I have added a puppy to my litter
 #    When I click on "Complete the Adoption"
