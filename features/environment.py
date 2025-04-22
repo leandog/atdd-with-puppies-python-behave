@@ -27,20 +27,21 @@ def before_all(context):
 
 
 def before_scenario(context, scenario):
-    context.home_page = HomePage(context.browser)
-    context.adoption_page = AdoptionPage(context.browser)
+    context.page = context.browser.new_page()
+    context.home_page = HomePage(context.page)
+    context.adoption_page = AdoptionPage(context.page)
 
 
 def after_scenario(context, scenario):
-    if scenario.status == 'failed' and hasattr(context, 'last_page'):
+    if scenario.status == 'failed' and hasattr(context, 'page'):
         timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
         screenshot_path = (
             f'failure_screenshots/{scenario.name}_{timestamp}.png'
         )
-        context.last_page.screenshot(path=screenshot_path)
+        context.page.screenshot(path=screenshot_path)
 
-    context.adoption_page.cleanup()
-    context.home_page.cleanup()
+    if hasattr(context, 'page'):
+        context.page.close()
 
 
 # Private helper functions
