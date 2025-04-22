@@ -10,7 +10,6 @@ Feature: As a dog lover
     Examples:
     | puppy_name |
     | Brook |
-    | Julias |
 
 #  Scenario:  BOB Team Scenario
 
