@@ -17,7 +17,7 @@ Feature: As a dog lover
     Given I am on the home page
     When I click on the puppy "Brook"
     And I see the profile page
-    And I click on "Home"
+    And I navigate "Home"
     Then I see the home page
 
 #  Scenario: #3 Be able to add the puppy to adopt later
