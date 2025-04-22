@@ -7,5 +7,3 @@ class AdoptionPage(BasePage):
 
     def goto(self):
         self._page.goto(f'{BasePage.base_url()}/adoption-form')
-
-

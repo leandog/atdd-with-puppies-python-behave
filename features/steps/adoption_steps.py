@@ -1,9 +1,7 @@
 import re
-import time
 
 from behave import step
 from playwright.sync_api import expect
-
 
 
 @step('I am on the home page')
