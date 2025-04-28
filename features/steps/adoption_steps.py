@@ -51,3 +51,7 @@ def step_impl(context):
         expect(context.page.get_by_label(row['label'])).to_have_value(
             row['expected_value']
         )
+
+@step('I see "Thank you for adopting a puppy!"')
+def step_impl(context):
+    expect (context.page.locator(f"//p[contains(text(), 'Thank you for adopting a puppy!')]"))

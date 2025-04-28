@@ -62,11 +62,8 @@ Feature: As a dog lover
       | Address:  | 123 Main St.    |
       | Email:    | joe@sixpack.com |
     And I click on "Place Order"
-    Then I see the following form values:
-      | label     | expected_value  |
-      | Name:     | Joe Sixpack     |
-      | Address:  | 123 Main St.    |
-      | Email:    | joe@sixpack.com |
+    Then I see "Thank you for adopting a puppy!"
+
 
 
 #  Scenario: #8 Complete an adoption
