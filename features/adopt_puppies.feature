@@ -12,7 +12,7 @@ Feature: As a dog lover
     Given I am on the home page
     When I click on the puppy "Brook"
     And I click on "Return to List"
-    Then I see the home page
+    Then I am on the home page
 
   @future
   Scenario: #3 Be able to add the puppy to adopt later
