@@ -39,13 +39,13 @@ behave
 Run all functional tests WITH the @wip tag
 
 ```shell
-behave --tags @wip
+behave --tags @wip --no-skipped
 ```
 
 Run all functional tests EXCEPT those with the @future tag
 
 ```shell
-behave --tags ~@future
+behave --tags ~@future --no-skipped
 ```
 
 To show the browser while running and slow it down by 1,000 ms per call so a human can see what is happening:
