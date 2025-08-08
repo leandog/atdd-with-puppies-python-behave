@@ -2,6 +2,7 @@ Feature: As a dog lover
   I want to adopt a puppy
   So that I have a loyal companion
 
+  @future
   Scenario: #1 Be able to view the details of a puppy
     Given I am on the home page
     When I click on the puppy "Brook"

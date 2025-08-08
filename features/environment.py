@@ -28,8 +28,6 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     context.page = context.browser.new_page()
-    context.home_page = HomePage(context.page)
-    context.adoption_page = AdoptionPage(context.page)
 
 
 def after_scenario(context, scenario):
