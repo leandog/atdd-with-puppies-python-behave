@@ -4,9 +4,6 @@ from datetime import datetime
 
 from playwright.sync_api import sync_playwright
 
-from features.pages.home_page import HomePage
-from features.pages.adoption_page import AdoptionPage
-
 
 # behave hook functions
 def before_all(context):
