@@ -19,7 +19,7 @@ playwright install
 **Windows - command prompt**
 
 ```shell
-.venv/Scripts/activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 playwright install
 ```
