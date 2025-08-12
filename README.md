@@ -8,11 +8,22 @@ python3 -m venv .venv
 
 Setup your virtual environment and install dependencies:
 
+**Unix - bash shell**
+
 ```shell
 source .venv/bin/activate
 pip install -r requirements.txt
 playwright install
 ```
+
+**Windows - command prompt**
+
+```shell
+.venv/Scripts/activate
+pip install -r requirements.txt
+playwright install
+```
+
 
 ## Run Unit Tests
 
@@ -50,17 +61,37 @@ behave --tags ~@future --no-skipped
 
 To show the browser while running and slow it down by 1,000 ms per call so a human can see what is happening:
 
+**Unix - bash shell**
+
 ```shell
 HEADLESS=false SLOW_BY=1000 behave
 ```
+
+**Windows - command prompt**
+
+```shell
+set HEADLESS=false 
+set SLOW_BY=1000 
+behave
+```
+
 
 You can also change the location of the application you are testing using the BASE_URL environment variable.
 
 This is used to point at the site on different environments such as development, test, production, etc. By default, this
 is set to http://localhost:5063/
 
+**Unix - bash shell**
+
 ```shell
 BASE_URL="http://example.org:1234" behave
+```
+
+**Windows - command prompt**
+
+```shell
+set BASE_URL="http://example.org:1234"
+behave
 ```
 
 Sometimes it is useful to show stdout (the otuput from print statements) when running the functional tests.
