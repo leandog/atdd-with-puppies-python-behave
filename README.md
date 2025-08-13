@@ -18,7 +18,7 @@ playwright install
 
 **Windows - command prompt**
 
-```shell
+```cmd
 .venv\Scripts\activate
 pip install -r requirements.txt
 playwright install
@@ -56,7 +56,7 @@ HEADLESS=false SLOW_BY=1000 behave
 
 **Windows - command prompt**
 
-```shell
+```cmd
 set HEADLESS=false 
 set SLOW_BY=1000 
 behave
@@ -66,7 +66,7 @@ set SLOW_BY=
 
 **Windows - PowerShell**
 
-```shell
+```powershell
 $env:HEADLESS = "false"
 $env:SLOW_BY = "1000"
 behave
@@ -87,7 +87,7 @@ BASE_URL="http://example.org:1234" behave
 
 **Windows - command prompt**
 
-```shell
+```cmd
 set BASE_URL="http://example.org:1234"
 behave
 set BASE_URL=
@@ -95,7 +95,7 @@ set BASE_URL=
 
 **Windows - PowerShell**
 
-```shell
+```powershell
 $env:BASE_URL="http://example.org:1234"
 behave
 $env:BASE_URL=
