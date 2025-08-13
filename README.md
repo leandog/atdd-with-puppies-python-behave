@@ -24,21 +24,6 @@ pip install -r requirements.txt
 playwright install
 ```
 
-
-## Run Unit Tests
-
-Run the entire unit test suite:
-
-```shell
-pytest
-```
-
-Run unit tests every time a file changes:
-
-```shell
-ptw
-```
-
 ## Run Functional Tests
 
 By default, the functional tests run in headless mode:
@@ -52,6 +37,8 @@ Run all functional tests WITH the @wip tag
 ```shell
 behave --tags @wip --no-skipped
 ```
+
+NOTE: In old versions of PowerShell you may have to place the @wip tag (or any other commands that include an @ sign) inside quotes like this: `behave --tags '@wip' --no-skipped`
 
 Run all functional tests EXCEPT those with the @future tag
 
@@ -73,8 +60,19 @@ HEADLESS=false SLOW_BY=1000 behave
 set HEADLESS=false 
 set SLOW_BY=1000 
 behave
+set HEADLESS= 
+set SLOW_BY= 
 ```
 
+**Windows - PowerShell**
+
+```shell
+$env:HEADLESS = "false"
+$env:SLOW_BY = "1000"
+behave
+$env:HEADLESS=$null
+$env:SLOW_BY=$null
+```
 
 You can also change the location of the application you are testing using the BASE_URL environment variable.
 
@@ -92,40 +90,21 @@ BASE_URL="http://example.org:1234" behave
 ```shell
 set BASE_URL="http://example.org:1234"
 behave
+set BASE_URL=
 ```
 
-Sometimes it is useful to show stdout (the otuput from print statements) when running the functional tests.
+**Windows - PowerShell**
+
+```shell
+$env:BASE_URL="http://example.org:1234"
+behave
+$env:BASE_URL=
+```
+
+Sometimes it is useful to show stdout (the output from print statements) when running the functional tests.
 
 To do that pass the --no-capture flag as shown below:
 
 ```shell
 behave --no-capture
-```
-
-## Formatting
-
-Format all files:
-
-```shell
-ruff format
-```
-
-Check if all files are properly formatted and return a non-zero exit code if they are not:
-
-```shell
-ruff format --check
-```
-
-## Linting
-
-Lint the application's code:
-
-```shell
-ruff check
-```
-
-Lint and automatically fix any errors it can safely:
-
-```shell
-ruff check --fix
 ```
